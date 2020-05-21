@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/posts" method="POST">
+      <input type="text" name="title" placeholder="Post Title" />
+      <input type="text" name="content" placeholder="Post Body" />
+      <input type="text" name="category" placeholder="Post Category" />
+      <input type="submit" />
+    </form>
+    <% postInfo.forEach((specificPost)=>{ %>
+    <form action="/delete-post" method="POST">
+      <input
+        type="hidden"
+        name="specificPost"
+        value="<%= specificPost.id %>"
+        id="<%= specificPost.id %>"
+      />
+      <div>
+        <%= specificPost.title %>
+      </div>
+      <div><%= specificPost.body %></div>
+      <div><%= specificPost.category %></div>
+      <br />
+
+      <button>Delete Post</button>
+    </form>
+    <% }) %>
+  </body>
+</html>
