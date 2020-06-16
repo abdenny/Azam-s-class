@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import MovieList from './MovieList';
 
 const DisplayCounter = (props) => {
   return (
     <>
       <h1>{props.ctr}</h1>
+      <MovieList />
     </>
   );
 };
